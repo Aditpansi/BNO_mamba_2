@@ -239,9 +239,9 @@ void loop() {
     bno.getEvent(&event);
 
     // Correct yaw for declination
-    float yaw = (event.orientation.x + declinationAngle - 0) * -1;
-    if (yaw < 0) yaw += 360;
-    if (yaw > 360) yaw -= 360;
+    float yaw = (event.orientation.x + declinationAngle - 0) ;
+    if (yaw > 180) yaw -= 360;
+    // if (yaw > 360) yaw -= 360;
 
     float roll = event.orientation.z * -1;
     float pitch = event.orientation.y;
